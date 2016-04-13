@@ -1,0 +1,12 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: bfyi_dev
+  pool: 5
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: bfyi_test
+  pool: 5
+

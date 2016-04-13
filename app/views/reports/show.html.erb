@@ -1,0 +1,34 @@
+<div class="report">
+  <table class="results">
+    <tr>
+      <th>name</th>
+      <% if @report.compare %>
+        <th>times slower</th>
+      <% end %>
+      <th>iterations/second</th>
+    </tr>
+    <% @report.data.each do |part| %>
+      <tr>
+        <td>
+          <% if part["name"] == @fastest["name"] %>
+            <b><%= part["name"] %></b>
+          <% else %>
+            <%= part["name"] %>
+          <% end %>
+        </td>
+        <% if @report.compare %>
+          <td><%= times_slower @fastest, part %></td>
+        <% end %>
+        <td><%= format_ips part["ips"] %> ±<%= format_stddev part %></td>
+      </tr>
+    <% end %>
+  </table>
+
+  <% if @note_high_stddev %>
+    <div class="panel">
+      One or more entries has a fairly high standard deviation. This means that
+      the iterations were not very consistent and were subject to effects outside
+      the code itself, such as machine load, GC, etc.
+    </div>
+  <% end %>
+</div>
