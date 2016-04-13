@@ -7,4 +7,15 @@
     font-family: Monaco, Consolas, 'Liberation Mono', Courier, monospace;
   }
   width: 600px;
+
+  @media screen and (max-width: 600px) {
+    width: 100%;
+    padding-right: 5px;
+    font-size: 13px;
+
+    .results {
+      font-size: 13px;
+    }
+
+  }
 }
