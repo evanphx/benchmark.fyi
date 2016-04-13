@@ -29,7 +29,19 @@ class ReportsControllerTest < ActionController::TestCase
     rep = JSON.parse @response.body
 
     report = Report.find_from_short_id rep["id"]
-    assert_equal data, report.report
+
+raw = <<-DATA
+    [{
+      "name": "test",
+      "ips": 10.1,
+      "stddev": 0.3,
+      "microseconds": 3322,
+      "iterations": 221,
+      "cycles": 16
+    }]
+DATA
+
+    assert_equal JSON.parse(raw), report.data
   end
 
   test "errors on unknown data keys" do
