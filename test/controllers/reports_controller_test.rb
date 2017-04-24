@@ -15,6 +15,8 @@ class ReportsControllerTest < ActionController::TestCase
     [{
       "name": "test",
       "ips": 10.1,
+      "central_tendency": 10.1,
+      "error": 23666,
       "stddev": 0.3,
       "microseconds": 3322,
       "iterations": 221,
@@ -34,6 +36,8 @@ raw = <<-DATA
     [{
       "name": "test",
       "ips": 10.1,
+      "central_tendency": 10.1,
+      "error": 23666,
       "stddev": 0.3,
       "microseconds": 3322,
       "iterations": 221,
