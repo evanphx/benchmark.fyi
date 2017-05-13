@@ -3,7 +3,7 @@ class ReportsController < ApplicationController
 
   protect_from_forgery :except => [:create]
 
-  DATA_KEY = %W!name ips stddev microseconds iterations cycles!
+  DATA_KEY = %W!central_tendency error name ips stddev microseconds iterations cycles!
 
   def create
     data = request.body.read
