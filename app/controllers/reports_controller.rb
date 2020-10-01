@@ -10,7 +10,8 @@ class ReportsController < ApplicationController
 
     begin
       input = JSON.parse data
-    rescue Exception
+    rescue Exception => err
+      logger.fatal("Error: #{err.message} || #{data}")
       head 400
       return
     end

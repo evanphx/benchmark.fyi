@@ -3,7 +3,8 @@ require 'test_helper'
 class ReportsControllerTest < ActionController::TestCase
   test "validates the data json" do
     data = "nope"
-    post :create, data
+
+    post :create, body: data
 
     assert_equal "400", @response.code
   end
@@ -24,7 +25,8 @@ class ReportsControllerTest < ActionController::TestCase
     }]
 }
     DATA
-    post :create, data
+
+    post :create, body: data
 
     assert_equal "200", @response.code
 
@@ -62,7 +64,8 @@ DATA
     }]
 }
     DATA
-    post :create, data
+    
+    post :create, body: data
 
     assert_equal "400", @response.code
   end
@@ -76,7 +79,8 @@ DATA
     }]
 }
     DATA
-    post :create, data
+    
+    post :create, body: data
 
     assert_equal "400", @response.code
 
