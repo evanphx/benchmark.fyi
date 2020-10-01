@@ -15,10 +15,8 @@ gem "sass-rails"
 gem 'webpacker', '~> 4.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
-# Use Active Model has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+
+gem 'foundation-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -35,21 +33,9 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :test do
-  gem 'capybara', '>= 2.15'
-  gem 'selenium-webdriver'
-  gem 'webdrivers'
-  gem 'rspec-rails'
   gem 'test-unit'
 end
 
 group :development, :test do
-  gem 'factory_bot_rails'
-  gem 'simplecov', require: false
-  gem 'standard'
-  gem 'reek'
   gem 'rails_best_practices'
-  gem 'overcommit'
 end
-
-gem 'dotenv-rails'
-gem 'pagy', '~> 3.8'
