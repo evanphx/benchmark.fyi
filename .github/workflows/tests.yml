@@ -46,6 +46,7 @@ jobs:
           yarn install
           bin/setup
           cp config/database.yml.github config/database.yml
+          cat config/database.yml
           bin/rails db:setup
       - name: Run tests
         run: |
