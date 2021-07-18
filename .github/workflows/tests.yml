@@ -44,9 +44,9 @@ jobs:
           gem install bundler
           bundle install --jobs 4 --retry 3
           yarn install
-          bin/setup
           cp config/database.yml.github config/database.yml
           cat config/database.yml
+          bin/setup
           bin/rails db:setup
       - name: Run tests
         run: |
